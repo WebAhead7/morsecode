@@ -47,12 +47,14 @@ document.getElementById('submit').addEventListener('click', () => {
   fetch(`/data?data=${value}`)
     .then((body) => body.json())
     .then((json) => {
+      if (json.error) {
+        throw json;
+      }
       showTranslatedResult(json.morsecode);
       hideSpinner();
     })
-    .catch((err) => {
+    .catch(() => {
       hideSpinner();
       showErrorAlert('Server Error');
-      throw err;
     });
 });

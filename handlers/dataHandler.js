@@ -12,8 +12,10 @@ module.exports = (req, res) => {
       url: `http://www.morsecode-api.de/encode?string=${data}`,
     },
     (err, _, body) => {
-      if (err) throw err;
       res.setHeader('content-type', 'application/json');
+      if (err) {
+        res.end({ error: 'error' });
+      }
       res.end(body);
       // eslint-disable-next-line comma-dangle
     }
