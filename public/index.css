@@ -2,6 +2,17 @@
   display: none;
 }
 
-.show {
-  display: block;
+body {
+  background: rgba(255, 248, 220, 0.5);
+}
+
+.headerContainer {
+  background-color: rgba(61, 64, 240, 0.726);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.result {
+  margin-top: 10px;
 }

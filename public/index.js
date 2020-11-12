@@ -15,6 +15,7 @@ document.getElementById('submit').addEventListener('click', () => {
       const newHeader = document.createElement('h1');
       newHeader.textContent = json.morsecode;
       result.appendChild(newHeader);
+      result.classList.remove('hide');
       spinner.classList.add('hide');
     })
     .catch((err) => {

@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "run": "./node_modules/.bin/pm2 run server.js"
   },
   "author": "Nizar Halloun",
   "license": "ISC",
@@ -15,6 +17,7 @@
     "nodemon": "^2.0.6"
   },
   "dependencies": {
+    "pm2": "^4.5.0",
     "request": "^2.88.2"
   }
 }
