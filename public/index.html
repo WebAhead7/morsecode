@@ -13,44 +13,51 @@
     <title>api</title>
   </head>
   <body>
-    <div class="headerContainer">
-      <h1 class="header">Morse code text converter</h1>
-    </div>
-    <div class="input-group input-group-lg">
-      <div class="input-group-prepend">
+    <div class="container">
+      <div class="headerContainer">
+        <h1 class="header">Morse code text converter</h1>
+      </div>
+      <div class="input-group input-group-lg">
+        <div class="input-group-prepend">
+          <input
+            class="btn btn-primary"
+            type="submit"
+            value="Submit"
+            id="submit"
+          />
+        </div>
         <input
-          class="btn btn-primary"
-          type="submit"
-          value="Submit"
-          id="submit"
+          type="text"
+          class="form-control text"
+          aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-lg"
+          name="text"
+          autocomplete="off"
+          id="input"
         />
       </div>
-      <input
-        type="text"
-        class="form-control text"
-        aria-label="Sizing example input"
-        aria-describedby="inputGroup-sizing-lg"
-        name="text"
-        autocomplete="off"
-        id="input"
-      />
-    </div>
-    <div class="spinner-border hide" role="status" id="spinner">
-      <span class="sr-only hide">Loading...</span>
-    </div>
 
-    <div class="alert alert-primary hide result" role="alert"></div>
+      <div class="spinnerContainer">
+        <div class="spinner-border hide" role="status" id="spinner">
+          <span class="sr-only hide">Loading...</span>
+        </div>
+      </div>
 
-    <hr />
-    <section>
-      <h2>Morse code history</h2>
-      <p>
-        Morse code is a method used in telecommunication to encode text
-        characters as standardized sequences of two different signal durations,
-        called dots and dashes or dits and dahs.[2][3] Morse code is named after
-        Samuel Morse, an inventor of the telegraph.
-      </p>
-    </section>
+      <div class="alert alert-danger hide" role="alert"></div>
+
+      <div class="alert alert-primary hide result" role="alert"></div>
+
+      <hr />
+      <section>
+        <h2>Morse code history</h2>
+        <p>
+          Morse code is a method used in telecommunication to encode text
+          characters as standardized sequences of two different signal
+          durations, called dots and dashes or dits and dahs.[2][3] Morse code
+          is named after Samuel Morse, an inventor of the telegraph.
+        </p>
+      </section>
+    </div>
   </body>
   <script src="/public/index.js"></script>
 </html>

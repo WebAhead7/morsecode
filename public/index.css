@@ -16,3 +16,22 @@ body {
 .result {
   margin-top: 10px;
 }
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#spinner {
+  margin-top: 10px;
+}
+
+.container {
+  border: solid 1px;
+  height: 100vh;
+  background: rgba(255, 248, 220, 0.692);
+}
+
+.alert-danger {
+  margin-top: 10px;
+}
