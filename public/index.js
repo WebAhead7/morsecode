@@ -45,16 +45,27 @@ document.getElementById('submit').addEventListener('click', () => {
   input.value = '';
   showSpinner();
   fetch(`/data?data=${value}`)
-    .then((body) => body.json())
-    .then((json) => {
-      if (json.error) {
-        throw json;
+    .then((body) => {
+      const { status } = body;
+      if (status === 408) {
+        throw new Error('Server time out error');
       }
+      if (status !== 200) {
+        throw new Error('Server error');
+      }
+      return body.json();
+    })
+    .then((json) => {
+      if (!json) throw new Error('Json error');
       showTranslatedResult(json.morsecode);
       hideSpinner();
     })
-    .catch(() => {
+    .catch((err) => {
       hideSpinner();
-      showErrorAlert('Server Error');
+      showErrorAlert(err.message);
     });
+});
+
+document.querySelector('.sendMail').addEventListener('click', (e) => {
+  e.preventDefault();
 });

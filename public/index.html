@@ -46,6 +46,48 @@
       <div class="alert alert-danger hide" role="alert"></div>
 
       <div class="alert alert-primary hide result" role="alert"></div>
+      <hr class="hide" />
+      <form class="hide">
+        <div class="form-group">
+          <label for="exampleInputEmail1">To email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="toEmail"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">From email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="fromEmail"
+            aria-describedby="emailHelp"
+            placeholder="Enter email"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone else.</small
+          >
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="exampleInputPassword1"
+            placeholder="Password"
+          />
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+          <label class="form-check-label" for="exampleCheck1"
+            >Check me out</label
+          >
+        </div>
+        <button type="submit" class="btn btn-primary sendMail">Submit</button>
+      </form>
 
       <hr />
       <section>
@@ -57,6 +99,7 @@
           is named after Samuel Morse, an inventor of the telegraph.
         </p>
       </section>
+      <hr />
     </div>
   </body>
   <script src="/public/index.js"></script>

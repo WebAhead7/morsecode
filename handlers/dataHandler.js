@@ -7,17 +7,17 @@ module.exports = (req, res) => {
   const queryParsed = querystring.parse(query);
   const { data } = queryParsed;
 
-  request.get(
-    {
-      url: `http://www.morsecode-api.de/encode?string=${data}`,
-    },
-    (err, _, body) => {
-      res.setHeader('content-type', 'application/json');
-      if (err) {
-        res.end({ error: 'error' });
-      }
-      res.end(body);
-      // eslint-disable-next-line comma-dangle
+  const options = {
+    url: `http://www.morsecode-api.de/encode?string=${data}`,
+    timeout: 10000,
+  };
+
+  request.get(options, (err, _, body) => {
+    res.setHeader('content-type', 'application/json');
+    if (err) {
+      res.statusCode = 408;
     }
-  );
+    res.end(body);
+    // eslint-disable-next-line comma-dangle
+  });
 };
